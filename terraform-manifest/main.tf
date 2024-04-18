@@ -1,18 +1,19 @@
-# Configure the Azure provider
+# Terraform Block
 terraform {
+  required_version = ">= 1.0.0"
   required_providers {
     azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 2.0"
+      source = "hashicorp/azurerm"
+      version = ">= 2.0" 
     }
   }
-
-  required_version = ">= 1.1.0"
 }
 
+# Provider Block
 provider "azurerm" {
-  features {}
+ features {}          
 }
+
 
 resource "azurerm_resource_group" "rg" {
   name     = "myTFResourceGroup"
